@@ -11,7 +11,7 @@
 	<div class="container">
 		<h1>인덱스 페이지 입니다.</h1>
 		<ul>
-			
+			<li><a href="${pageContext.request.contextPath }/play">놀러가기</a></li>
 		</ul>
 		
 		<h2>공지사항</h2>
