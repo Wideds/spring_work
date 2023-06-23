@@ -39,6 +39,7 @@
 		 -->
 		<interceptor>
 			<mapping path="/users/*"/>
+			<mapping path="/file/*"/>
 			<exclude-mapping path="/users/loginform"/>
 			<exclude-mapping path="/users/login"/>
 			<beans:ref bean="LoginInterceptor"/>
