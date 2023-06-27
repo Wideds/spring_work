@@ -23,6 +23,14 @@ public class UsersController {
 	@Autowired
 	private UsersService service;
 	
+	@RequestMapping("users/delete")
+	public ModelAndView delete(HttpSession session, ModelAndView mView) {
+		service.deleteUser(session, mView);
+		
+		mView.setViewName("users/delete");
+		return mView;
+	}
+	
 	@RequestMapping(value = "users/update", method = RequestMethod.POST)
 	public ModelAndView update(UsersDto dto, HttpSession session, ModelAndView mView) {
 		//서비스를 이용해서 개인정보를 수정하고
