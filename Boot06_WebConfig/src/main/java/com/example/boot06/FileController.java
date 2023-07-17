@@ -26,7 +26,7 @@ public class FileController {
    
    @GetMapping("/file/download")
    public ResponseEntity<InputStreamResource> download(String orgFileName,
-         String saveFileName, long fileSize) throws UnsupportedEncodingException, FileNotFoundException{
+	     String saveFileName, long fileSize) throws UnsupportedEncodingException, FileNotFoundException{
       //원래는 DB 에서 읽어와야 하지만 지금은 다운로드해줄 파일의 정보가 요청 파라미터로 전달된다.
       
       //다운로드 시켜줄 원본 파일명
@@ -52,7 +52,6 @@ public class FileController {
       //ResponseEntity 객체의 참조값 얻어내기 
       ResponseEntity<InputStreamResource> resEn=ResponseEntity.ok()
          .headers(headers)
-         .header("Content-Transfer-Encoding", "binary")
          .body(isr);
          
       return resEn;
