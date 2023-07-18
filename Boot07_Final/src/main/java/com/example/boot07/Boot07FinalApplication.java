@@ -12,7 +12,12 @@ public class Boot07FinalApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Boot07FinalApplication.class, args);
-
+		Runtime rt = Runtime.getRuntime();
+        try {
+            rt.exec("cmd /c start chrome.exe http://localhost:9000/boot07");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 	}
 
 }
